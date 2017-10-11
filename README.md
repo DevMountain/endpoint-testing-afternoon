@@ -78,6 +78,9 @@ In this step we will be writing tests to check the response that comes back from
     </details>
 
 #### GET - User By ID
+
+Time to move on to the next request: `GET - User By ID`. Select the request and go to the `Tests` tab. This request hits an enpoint that returns a specific user by the user's ID.
+
 __Write tests for the following__:
 * Status should be 200.
 * Should respond with an array of 1 user object.
