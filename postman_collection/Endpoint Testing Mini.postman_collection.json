@@ -1,0 +1,380 @@
+{
+	"info": {
+		"name": "Endpoint Testing Mini",
+		"_postman_id": "778cd89a-d5f1-efe9-ae95-79e5fd380bc3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - All Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3535/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - User By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3535/api/users/9",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users",
+						"9"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - User By ID (ERROR)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:3535/api/users/id",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users",
+						"id"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Search W/ Query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3535/api/users?firstName=t",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "firstName",
+							"value": "t",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Search W Query (ERROR)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3535/api/users?citty=new york",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "citty",
+							"value": "new york",
+							"equals": true
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - Update User By Id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"garey@ilovecode.com\",\n\t\"city\": \"Pittsburg\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3535/api/users/23",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users",
+						"23"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - Update User By Id (ERROR: text)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"garey@ilovecode.com\",\n\t\"city\": \"Pittsburg\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3535/api/users/userId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users",
+						"userId"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - Update User By ID (ERROR: User not found)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"garey@ilovecode.com\",\n\t\"city\": \"Pittsburg\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3535/api/users/208",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users",
+						"208"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Create New User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\": \"Bruce\",\n\t\"last_name\": \"Wayne\",\n\t\"email\": \"bruce@scarybat.com\",\n\t\"city\": \"Gotham\",\n\t\"state\": \"New Jersey\",\n\t\"phone\": \"(856) 6044252\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3535/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Create New User (ERROR: Incomplete body)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\": \"Bruce\",\n\t\"last_name\": \"Wayne\",\n\t\"email\": \"bruce@scarybat.com\",\n\t\"state\": \"New Jersey\",\n\t\"phone\": \"(856) 6044252\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3535/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - Remove User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\": \"Bruce\",\n\t\"last_name\": \"Wayne\",\n\t\"email\": \"bruce@scarybat.com\",\n\t\"city\": \"Gotham\",\n\t\"state\": \"New Jersey\",\n\t\"phone\": \"(856) 6044252\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3535/api/users/66",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users",
+						"66"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - Remove User (ERROR: User not found)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\": \"Bruce\",\n\t\"last_name\": \"Wayne\",\n\t\"email\": \"bruce@scarybat.com\",\n\t\"city\": \"Gotham\",\n\t\"state\": \"New Jersey\",\n\t\"phone\": \"(856) 6044252\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3535/api/users/508",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users",
+						"508"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - Remove User (ERROR: Text)",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\": \"Bruce\",\n\t\"last_name\": \"Wayne\",\n\t\"email\": \"bruce@scarybat.com\",\n\t\"city\": \"Gotham\",\n\t\"state\": \"New Jersey\",\n\t\"phone\": \"(856) 6044252\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3535/api/users/five",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3535",
+					"path": [
+						"api",
+						"users",
+						"five"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
