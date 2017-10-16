@@ -13,7 +13,7 @@ Postman docs: https://www.getpostman.com/docs/postman/scripts/test_scripts
 ## Step 1
 
 * Run `npm install` in the terminal to install dependencies.
-* Run `nodemon` in the terminal. The package.json file has already been configured to run the server file on the execution of the `nodemon` command.
+* Run `nodemon` in the terminal. The package.json file has already been configured to run the server file on the execution of the `nodemon` command. Do not change the port from 3535.
 
 ## Step 2
 
@@ -26,7 +26,7 @@ We will import a collection of requests to Postman.
 * Open Postman.
 * Click on the `import` button located in the top left corner of Postman.
   * The file you are importing is inside of the `postman_collection` folder in this repo.
-* After importing, you should have a collection called `Endpoint Testing Mini`. If you click on it, the list of requests should expand/close;
+* After importing, you should have a collection called `Endpoint Testing Afternoon`. If you click on it, the list of requests should expand/close;
 
 ## Step 3
 
