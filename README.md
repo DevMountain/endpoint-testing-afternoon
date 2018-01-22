@@ -131,6 +131,38 @@ pm.test("Returned data is expected", function () {
 
 <img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/3.png" />
 
+## Step 4
+
+### Summary
+
+In this step, we will create a Postman test for fetching a user by ID with an Error.
+
+### Instructions
+
+* Click on the third request `GET - User by ID (ERROR)`
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned status is `400`.
+* Create a test to verify the returned message is `"User id sent must be a number"`.
+
+### Solution
+
+<details>
+
+<summary> <code> GET - User by ID (ERROR) </code> </summary>
+
+```js
+pm.test("Status code is 400", function () {
+  pm.response.to.have.status( 400 );
+});
+
+pm.test("Returned error message is expected", function () {
+  pm.expect( pm.response.text() ).to.eql("User id sent must be a number");
+});
+```
+
+</details>
+
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/4.png" />
 
 
 
