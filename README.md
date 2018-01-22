@@ -101,7 +101,30 @@ In this step, we will create a Postman test for fetching users by ID.
 <summary> <code> GET - User by ID </code> </summary>
 
 ```js
+const expectedObject = {
+  id: 9,
+  first_name: "Tatum",
+  last_name: "Vell",
+  email: "tvell8@wisc.edu",
+  city: "Youngstown",
+  state: "Ohio",
+  phone: "(330) 6802507"
+};
 
+const responseJSON = pm.response.json();
+
+pm.test("Status code is 200", function () {
+  pm.response.to.have.status( 200 );
+});
+
+pm.test("Returned data is an Array with length of 1", function () {
+  pm.expect( Array.isArray( responseJSON ) ).to.eql( true );
+  pm.expect( responseJSON.length ).to.eql( 1 );
+});
+
+pm.test("Returned data is expected", function () {
+  pm.expect( responseJSON[0] ).to.eql( expectedObject ); 
+});
 ```
 
 </details>
