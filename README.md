@@ -378,8 +378,38 @@ pm.test("Returned user id is a number", function () {
 
 <img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/9.png" />
 
+## Step 10
 
+### Summary
 
+In this step, we will create a Postman test for creating a user that returns an error.
+
+### Instructions
+
+* Click on the `POST - Create user ( error )` request.
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned status code is `200`.
+* Create a test to verify the returned message is `"All needed user info was not sent in the body of request."`.
+
+### Solution
+
+<details>
+
+<summary> <code> POST - Create user ( error ) </code> </summary>
+
+```js
+pm.test("Status code is 400", function () {
+  pm.response.to.have.status( 400 );
+});
+
+pm.test("Returned error message is expected", function () {
+  pm.expect( pm.response.text() ).to.eql("All needed user info was not sent in the body of request.");
+});
+```
+
+</details>
+
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/solution/readme-assets/10.png" />
 
 
 
