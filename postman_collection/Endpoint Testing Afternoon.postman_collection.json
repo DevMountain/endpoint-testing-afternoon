@@ -1,13 +1,25 @@
 {
 	"info": {
 		"name": "Endpoint Testing Afternoon",
-		"_postman_id": "778cd89a-d5f1-efe9-ae95-79e5fd380bc3",
+		"_postman_id": "e51be2b4-157e-e958-cc69-98d89cb8c491",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "GET - All Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "59508489-d2fe-48f5-80f4-41618631a572",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -23,13 +35,24 @@
 						"api",
 						"users"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "GET - User By ID",
+			"name": "GET - User by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d0cf10d9-0a29-4fe5-b598-603c20b05f65",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -45,13 +68,24 @@
 						"users",
 						"9"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "GET - User By ID (ERROR)",
+			"name": "GET - User by ID ( error )",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "71245e8b-7ae6-48df-8660-4c5f7885d4c7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -67,13 +101,24 @@
 						"users",
 						"id"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "GET - Search W/ Query",
+			"name": "GET - User with Query",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d3dd0bed-0860-4dab-880d-c61306c2e92c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -96,13 +141,24 @@
 							"equals": true
 						}
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "GET - Search W Query (ERROR)",
+			"name": "GET - User with Query ( error )",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f1c0acd6-193c-4267-b553-6e995f56361f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -125,13 +181,24 @@
 							"equals": true
 						}
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "PUT - Update User By Id",
+			"name": "PUT - Update user by ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3173c6ef-98fb-405c-8a3f-ebf800e78256",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -156,13 +223,24 @@
 						"users",
 						"23"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "PUT - Update User By Id (ERROR: text)",
+			"name": "PUT - Update user by ID ( error )",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f7375ff-7064-476c-be12-3b43dc6e3a94",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [
@@ -187,44 +265,12 @@
 						"users",
 						"userId"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "PUT - Update User By ID (ERROR: User not found)",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"email\": \"garey@ilovecode.com\",\n\t\"city\": \"Pittsburg\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:3535/api/users/208",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3535",
-					"path": [
-						"api",
-						"users",
-						"208"
-					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "POST - Create New User",
+			"name": "POST - Create user",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -248,13 +294,12 @@
 						"api",
 						"users"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "POST - Create New User (ERROR: Incomplete body)",
+			"name": "POST - Create user ( error )",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -278,13 +323,12 @@
 						"api",
 						"users"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE - Remove User",
+			"name": "DELETE - Remove user",
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -309,13 +353,12 @@
 						"users",
 						"66"
 					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		},
 		{
-			"name": "DELETE - Remove User (ERROR: User not found)",
+			"name": "DELETE - Remove user ( error )",
 			"request": {
 				"method": "DELETE",
 				"header": [
@@ -340,39 +383,7 @@
 						"users",
 						"508"
 					]
-				},
-				"description": ""
-			},
-			"response": []
-		},
-		{
-			"name": "DELETE - Remove User (ERROR: Text)",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"first_name\": \"Bruce\",\n\t\"last_name\": \"Wayne\",\n\t\"email\": \"bruce@scarybat.com\",\n\t\"city\": \"Gotham\",\n\t\"state\": \"New Jersey\",\n\t\"phone\": \"(856) 6044252\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:3535/api/users/five",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3535",
-					"path": [
-						"api",
-						"users",
-						"five"
-					]
-				},
-				"description": ""
+				}
 			},
 			"response": []
 		}

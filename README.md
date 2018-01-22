@@ -281,7 +281,30 @@ pm.test("Returned city is 'Pittsburg'", function () {
 
 <img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/7.png" />
 
+## Step 8
 
+### Summary
+
+In this step, we will create a Postman test for updating a user by ID that returns an error.
+
+### Instructions
+
+* Click on the seventh request `PUT - Update User by ID (ERROR)`.
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned stats is `400`.
+* Create a test to verify the returned message is `""`.
+
+### Solution
+
+<details>
+
+<summary> <code> PUT - Update User by ID (ERROR) </code> </summary>
+
+```
+
+```
+
+</details>
 
 
 
