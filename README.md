@@ -27,6 +27,16 @@ In this step, we'll import the Postman collection into Postman.
   * The file you are importing is inside of the `postman_collection` folder in this repo.
 * After importing, you should have a collection called `Endpoint Testing Afternoon`.
 
+### Solution
+
+<img src="https://github.com/DevMountain/endpoint-testing-mini/blob/master/readme-assets/1.png" />
+
+
+
+
+
+
+
 ## Step 3
 
 ### Summary
