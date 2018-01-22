@@ -29,7 +29,7 @@ In this step, we'll import the Postman collection into Postman.
 
 ### Solution
 
-<img src="https://github.com/DevMountain/endpoint-testing-mini/blob/master/readme-assets/1.png" />
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/1.png" />
 
 
 
