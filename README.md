@@ -232,62 +232,60 @@ pm.test("Returned error message is expected", function () {
 
 <img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/6.png" />
 
+## Step 7
 
+### Summary
 
+In this step, we will create a Postman test for updating a user by ID.
 
-#### GET - Search W/ Query (ERROR)
+### Instructions
 
-__Test for the following:__
+* Click on the sixth request `PUT - Update User by Id`.
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned status is `200`.
+* Create a test to verify the returned data is an `Array` with a length of `1`.
+* Create a test to verify the returned user has an updated object with the following properties:
+  * `email` should equal `"garey@ilovecode.com"`.
+  * `city` should equal `"Pittsburg"`.
 
-When a query parameter is misspelled, an error message will be sent.
-
-* Status should be 400.
-* Message sent in body: `Improper query sent in request`
-
-  <details>
-  <summary><code>Solution</code></summary>
-
-  ```
-  pm.test("Status code is 400", function () {
-      pm.response.to.have.status(400);
-  });
-
-  pm.test("Correct error message", function () {
-      pm.expect(pm.response.text()).to.include("Improper query sent in request");
-  });
-  ```
-  </details>
-
-#### PUT - Update User By Id
-
-This endpoint will update a user, by the given ID, with the information sent in the body. 
-
-* Response: user object that was updated.
-
-__Test for the following:__
-* Status should be 200.
-* User with ID 23 should have the following information updated:
-  * email = 'garey@ilovecode.com'
-  * city = 'Pittsburg'
+### Solution
 
 <details>
-<summary><code>Solution</code></summary>
 
-```
+<summary> <code> PUT - Update User by Id </code> </summary>
+
+```js
+const responseJSON = pm.response.json();
+
 pm.test("Status code is 200", function () {
-    pm.response.to.have.status(200);
+  pm.response.to.have.status( 200 );
 });
 
-pm.test('Email and city updated for user w/ ID 23', function() {
-    let res = pm.response.json();
-    let infoUpdated = true;
-    if (res[0].email !== 'garey@ilovecode.com' || res[0].city !== 'Pittsburg') {
-        infoUpdated = false;
-    }
-    pm.expect(infoUpdated).to.eql(true);
-})
+pm.test("Returned data is an Array with a length of 1", function () {
+  pm.expect( Array.isArray( responseJSON ) ).to.eql( true );
+  pm.expect( responseJSON.length ).to.eql( 1 );
+});
+
+const user = responseJSON[0];
+
+pm.test("Returned email is 'garey@ilovecode.com'", function () {
+  pm.expect( user.email ).to.eql( "garey@ilovecode.com" );
+});
+
+pm.test("Returned city is 'Pittsburg'", function () {
+  pm.expect( user.city ).to.eql( "Pittsburg" );
+});
 ```
+
 </details>
+
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/7.png" />
+
+
+
+
+
+
 
 #### PUT - Update User By Id (ERROR: text)
 
