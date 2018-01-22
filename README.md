@@ -415,11 +415,36 @@ pm.test("Returned error message is expected", function () {
 
 ### Summary
 
+In this step, we will create a Postman test for removing a user by ID.
+
 ### Instructions
+
+* Click on the `DELETE - Remove user` request.
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned status code is `200`.
+* Create a test to verify the returned user's `id` is equal to `66`.
 
 ### Solution
 
+<details>
 
+<summary> <code> DELETE - Remove user </code> </summary>
+
+```js
+const user = pm.response.json()[0];
+
+pm.test("Status code is 200", function () {
+  pm.response.to.have.status( 200 );
+});
+
+pm.test("Returned user ID is equal to 66", function () {
+  pm.expect( user.id ).to.eql( 66 );
+});
+```
+
+</details>
+
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/11.png" />
 
 
 
