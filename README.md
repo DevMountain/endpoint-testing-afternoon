@@ -139,7 +139,7 @@ In this step, we will create a Postman test for fetching a user by ID that retur
 
 ### Instructions
 
-* Click on the third request `GET - User by ID (ERROR)`
+* Click on the third request `GET - User by ID ( error )`
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status is `400`.
 * Create a test to verify the returned message is `"User id sent must be a number"`.
@@ -148,7 +148,7 @@ In this step, we will create a Postman test for fetching a user by ID that retur
 
 <details>
 
-<summary> <code> GET - User by ID (ERROR) </code> </summary>
+<summary> <code> GET - User by ID ( error ) </code> </summary>
 
 ```js
 pm.test("Status code is 400", function () {
@@ -172,7 +172,7 @@ In this step, we will create a Postman test for fetching users with a query.
 
 ### Instructions
 
-* Click on the fourth request `GET - Searc W/ Query`.
+* Click on the fourth request `GET - User with Query`.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status is `200`.
 * Create a test to verify the return data set has a length greater than `0`.
@@ -181,7 +181,7 @@ In this step, we will create a Postman test for fetching users with a query.
 
 <details>
 
-<summary> <code> GET - Search W/ Query </code> </summary>
+<summary> <code> GET - User with Query </code> </summary>
 
 ```js
 const responseJSON = pm.response.json();
@@ -207,7 +207,7 @@ In this step, we will create a Postman test for fetching users with a query that
 
 ### Instructions
 
-* Click on the fifth request `GET - Search W Query (ERROR)`.
+* Click on the fifth request `GET - User with Query ( error )`.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status is `400`.
 * Create a test to verify the returned message is `"Improper query sent in request: citty=new york"`.
@@ -216,7 +216,7 @@ In this step, we will create a Postman test for fetching users with a query that
 
 <details>
 
-<summary> <code> GET - Search W Query (ERROR) </code> </summary>
+<summary> <code> GET - User with Query ( error ) </code> </summary>
 
 ```js
 pm.test("Status code is 400", function () {
@@ -240,7 +240,7 @@ In this step, we will create a Postman test for updating a user by ID.
 
 ### Instructions
 
-* Click on the sixth request `PUT - Update User by Id`.
+* Click on the sixth request `PUT - Update user by ID`.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status is `200`.
 * Create a test to verify the returned data is an `Array` with a length of `1`.
@@ -252,7 +252,7 @@ In this step, we will create a Postman test for updating a user by ID.
 
 <details>
 
-<summary> <code> PUT - Update User by Id </code> </summary>
+<summary> <code> PUT - Update user by ID </code> </summary>
 
 ```js
 const responseJSON = pm.response.json();
@@ -289,7 +289,7 @@ In this step, we will create a Postman test for updating a user by ID that retur
 
 ### Instructions
 
-* Click on the seventh request `PUT - Update User by ID (ERROR)`.
+* Click on the seventh request `PUT - Update User by ID ( error )`.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned stats is `400`.
 * Create a test to verify the returned message is `""`.
@@ -298,15 +298,21 @@ In this step, we will create a Postman test for updating a user by ID that retur
 
 <details>
 
-<summary> <code> PUT - Update User by ID (ERROR) </code> </summary>
+<summary> <code> PUT - Update User by ID ( error ) </code> </summary>
 
-```
+```js
+pm.test("Status code is 400", function () {
+  pm.response.to.have.status( 400 );
+});
 
+pm.test("Returned error message is expected", function () {
+  pm.expect( pm.response.text() ).to.eql("Error with user ID in request.");
+});
 ```
 
 </details>
 
-
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/8.png" />
 
 
 
