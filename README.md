@@ -14,7 +14,7 @@ If you need to refresh on Postman's documentation: <a href="https://www.getpostm
 * Run `nodemon` to start up the server.
   * The server will run on port `3535`, do not change this port.
 
-<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/2-1.png" />
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/setup.png" />
 
 ## Step 1
 
@@ -71,7 +71,7 @@ pm.test("Returned data has a length of 100", function () {
 
 </details>
 
-<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/3.png" />
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/2.png" />
 
 ## Step 3
 
@@ -129,7 +129,11 @@ pm.test("Returned data is expected", function () {
 
 </details>
 
-<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/4.png" />
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/3.png" />
+
+
+
+
 
 
 
