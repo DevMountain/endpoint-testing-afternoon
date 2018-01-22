@@ -71,7 +71,7 @@ pm.test("Returned data has a length of 100", function () {
 
 </details>
 
-
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/3.png" />
 
 
 
