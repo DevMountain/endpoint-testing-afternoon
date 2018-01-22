@@ -314,52 +314,46 @@ pm.test("Returned error message is expected", function () {
 
 <img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/8.png" />
 
+## Step 9
 
+### Summary
 
-#### PUT - Update User By Id (ERROR: text)
+In this step, we will create a Postman test for creating a new user.
 
-Write tests for when text is sent instead of a number for the user ID.
- 
-__Test for the following:__
-* Status code should be 400.
-* Error message: `Error with user ID in request.`
+### Instructions
 
-<details>
-<summary><code>Solution</code></summary>
+* Click on the `POST - Create user` request.
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned status code is `200`.
+* Create a test to verify the returned data is an `Array` with a length of `1`.
+* Create a test to verify the returned user has the following data:
+  * `first_name` equals `"Bruce"`.
+  * `last_name` equals `"Wayne"`.
+  * `email` equals `"bruce@scarybat.com"`.
+  * `city` equals `"Gotham"`.
+  * `state` equals `"New Jersey"`.
+  * `phone` equals `"(856) 6044252"`.
+* Create a test to verify the returned users has an `id` property that equals a `number`.
 
-```
-pm.test("Status code is 400", function () {
-    pm.response.to.have.status(400);
-});
-
-pm.test("Error message: Error with user ID in request.", function () {
-    pm.expect(pm.response.text()).to.include("Error with user ID in request.");
-});
-```
-</details>
-
-#### PUT - Update User By ID (ERROR: User not found)
-
-Write tests for when an ID is used that does not exist in the database.
-
-__Test for the following:__
-
-* Status code should be 404.
-* Error message: `User not found.`
+### Solution
 
 <details>
-<summary><code>Solution</code></summary>
+
+<summary> <code> POST - Create user </code> </summary>
+
+```js
 
 ```
-pm.test("Status code is 400", function () {
-    pm.response.to.have.status(404);
-});
 
-pm.test("Error message: User not found.", function () {
-    pm.expect(pm.response.text()).to.include("User not found.");
-});
-```
 </details>
+
+
+
+
+
+
+
+
 
 #### POST - Create New User
 New user information will be sent in the body of the request.
