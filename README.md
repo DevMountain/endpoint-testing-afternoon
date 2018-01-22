@@ -409,85 +409,24 @@ pm.test("Returned error message is expected", function () {
 
 </details>
 
-<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/solution/readme-assets/10.png" />
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/10.png" />
+
+## Step 11
+
+### Summary
+
+### Instructions
+
+### Solution
 
 
 
 
 
-#### POST - Create New User
-New user information will be sent in the body of the request.
 
-* Response: user that was created.
 
-__Test for the following:__
-* Status code should be 200.
-* User created should have the following key/value pairs:
-  ```
-  {
-    "first_name": "Bruce",
-    "last_name": "Wayne",
-    "email": "bruce@scarybat.com",
-    "city": "Gotham",
-    "state": "New Jersey",
-    "phone": "(856) 6044252"
-  }
-  ```
-* An ID should have been auto-generated for the new user created. Make sure the ID exists and is a valid number.
 
-<details>
-<summary><code>Solution</code></summary>
 
-```
-let res = pm.response.json();
-
-pm.test("Status code is 200", function () {
-    pm.response.to.have.status(200);
-});
-
-pm.test('User was added with correct user info', function() {
-    let newUser = {
-    "first_name": "Bruce",
-    "last_name": "Wayne",
-    "email": "bruce@scarybat.com",
-    "city": "Gotham",
-    "state": "New Jersey",
-    "phone": "(856) 6044252"
-  }
-  let correctUserInfo = true;
-  for (let prop in newUser) {
-      if (newUser[prop] !== res[0][prop]) correctUserInfo = false;
-  }
-    pm.expect(correctUserInfo).to.equal(true);  
-})
-
-pm.test('ID exists and is a valid number', function() {
-    pm.expect( typeof res[0].id ).to.eql('number');
-})
-```
-</details>
-
-#### POST - Create New User (ERROR: Incomplete body)
-
-Write tests for when a new user is being created and all needed information is *not* sent.
-
-__Test for the following:__
-* Status code should be 400.
-* Error message: `All needed user info was not sent in the body of request.`
-
-<details>
-<summary><code>Solution</code></summary>
-
-```
-pm.test("Status code is 400", function () {
-    pm.response.to.have.status(400);
-});
-
-pm.test("Error message: All needed user info was not sent in the body of request.", function () {
-    pm.expect(pm.response.text()).to.include("All needed user info was not sent in the body of request.");
-});
-```
-</details>
 
 #### DELETE - Remove User
 
