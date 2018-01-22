@@ -481,13 +481,20 @@ pm.test("Returned error message is expected", function () {
 
 ## Step 13
 
-* Restart `nodemon`.
-* Run the entire collection of requests and tests.
-  * Click on the right arrow next to the collection name.
-  * Click the blue `Run` button. The collection runner will open.
-  * Select the correct collection from the list on the left. Then click the blue button in the bottom at the bottom of the left side-menu.
+### Summary
 
-You should see all of your tests passing. Make sure you restart the server every time you re-run the collection runner.
+In this step, we'll restart the node server and run the Postman collection of tests as a whole.
+
+### Instructions
+
+* Restart the sever.
+* Click on the right arrow next to the collection name.
+* Click the `Run` button.
+* Select the correct collection from the list on the left. Then click the blue button in the bottom at the bottom of the left side-menu.
+
+### Solution
+
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/13.png" />
 
 ## Contributions
 
