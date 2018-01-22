@@ -487,10 +487,11 @@ In this step, we'll restart the node server and run the Postman collection of te
 
 ### Instructions
 
-* Restart the sever.
-* Click on the right arrow next to the collection name.
+* Restart the `sever`.
+* Click on the `right arrow` next to the collection name.
 * Click the `Run` button.
-* Select the correct collection from the list on the left. Then click the blue button in the bottom at the bottom of the left side-menu.
+* Select the correct collection from the list on the left.
+* Click the `blue button` in the bottom at the bottom of the left side-menu.
 
 ### Solution
 
