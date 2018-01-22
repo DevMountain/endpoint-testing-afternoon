@@ -446,82 +446,40 @@ pm.test("Returned user ID is equal to 66", function () {
 
 <img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/11.png" />
 
+## Step 12
 
+### Summary
 
+In this step, we will create a Postman test for removing a user that returns an error.
 
+### Instructions
 
+* Click on the `DELETE - Remove user ( error )` request.
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned status code is `404`.
+* Create a test to verify the returned message is `"No user with an ID of 508."`.
 
-
-
-#### DELETE - Remove User
-
-The endpoint will remove a user by the given user ID.
-* Response: the user object that was removed.
-
-__Test for the following:__
-* Status code should be 200.
-* The ID of the object that was removed is 66 (ID that was sent in request).
-
-<details>
-<summary><code>Solution</code></summary>
-
-```
-pm.test("Status code is 200", function () {
-    pm.response.to.have.status(200);
-});
-
-pm.test('Removed user has ID of 66', function() {
-    pm.expect(pm.response.json()[0].id).to.eql(66);
-})
-```
-</details>
-
-#### DELETE - Remove User (ERROR: User does not found)
-Write tests for when an ID is used to remove a user and that ID does not match anyone in the database.
-
-__Test for the following:__
-* Status code should be 404.
-* Error message: `No user with an ID of 508.`
-  * Only test for part of the message: `No user with an ID of`. The ID in the message will change based on what ID is sent.
+### Solution
 
 <details>
-<summary><code>Solution</code></summary>
 
-```
+<summary> <code> DELETE - Remove user ( error ) </code> </summary>
+
+```js
 pm.test("Status code is 404", function () {
-    pm.response.to.have.status(404);
+  pm.response.to.have.status( 404 );
 });
 
-pm.test("Error message: No user with an ID of", function () {
-    pm.expect(pm.response.text()).to.include("No user with an ID of");
+pm.test("Returned error message is expected", function () {
+  pm.expect( pm.response.text() ).to.eql("No user with an ID of 508.");
 });
 ```
+
 </details>
 
-#### DELETE - Remove User (ERROR)
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/12.png" />
 
-This request is attempting to delete a user, but is sending `five` instead of the number 5 as the ID parameter.
-
-__Test for the following:__
-* Status code should be 400.
-* Error message: `Error with user ID in request.`
-
-<details>
-<summary><code>Solution</code></summary>
-
-```
-pm.test("Status code is 400", function () {
-    pm.response.to.have.status(400);
-});
-
-pm.test("Error message: Error with user ID in request.", function () {
-    pm.expect(pm.response.text()).to.include("Error with user ID in request.");
-});
-```
-</details>
-
-
-## Step 4
+## Step 13
 
 * Restart `nodemon`.
 * Run the entire collection of requests and tests.
