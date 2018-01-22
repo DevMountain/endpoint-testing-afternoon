@@ -14,6 +14,8 @@ Postman docs: https://www.getpostman.com/docs/postman/scripts/test_scripts
 * Run `nodemon` to start up the server.
   * The server will run on port `3535`, do not change this port.
 
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/2.png" />
+
 ## Step 1
 
 ### Summary
