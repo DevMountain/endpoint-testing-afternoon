@@ -1,9 +1,5 @@
 <img src="https://devmounta.in/img/logowhiteblue.png" width="250" align="right">
 
-# endpoint-testing-afternoon
-Unit Testing - Day 2 - ( Postman )
-
-
 # Project Summary
 
 In this project, we will learn about endpoint testing using Postman. Postman is a REST client that we will be making HTTP requests from. We will learn how to write Postman tests for the responses from the HTTP requests.
@@ -438,3 +434,14 @@ pm.test("Error message: Error with user ID in request.", function () {
 
 You should see all of your tests passing. Make sure you restart the server every time you re-run the collection runner.
 
+## Contributions
+
+If you see a problem or a typo, please fork, make the necessary changes, and create a pull request so we can review your changes and merge them into the master repo and branch.
+
+## Copyright
+
+© DevMountain LLC, 2017. Unauthorized use and/or duplication of this material without express and written permission from DevMountain, LLC is strictly prohibited. Excerpts and links may be used, provided that full and clear credit is given to DevMountain with appropriate and specific direction to the original content.
+
+<p align="center">
+<img src="https://devmounta.in/img/logowhiteblue.png" width="250">
+</p>
