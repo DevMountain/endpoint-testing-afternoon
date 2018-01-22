@@ -33,60 +33,48 @@ In this step, we'll import the Postman collection into Postman.
 
 <img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/1.png" />
 
-
-
-
-
-
-
-## Step 3
+## Step 2
 
 ### Summary
 
-In this step we will be writing tests to check the response that comes back from the server.
+In this step, we will create a Postman test for fetching all users.
 
 ### Instructions
 
-#### GET - All Users
+* Click on the first request `GET - All Users`.
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned status code is `200`.
+* Create a test to verify the returned data is an `Array`.
+* Create a test to verify the returned data has a length of `100`.
 
-* Click on the first request (`GET - All Users`). You will not need to change the method, request url, or the body of the request. All the needed request information has already been filled out.
-* Click the blue `Send` button and look at the response that we get. The server will be sending back an array of all user objects.
-* Select the `Tests` tab, located under the request url. We will be writing the tests in the box below.
-* __Tests:__
-  * Should be getting a status code of 200 if the request is successful. In the snippets section on the right, click on `Status code: Code is 200`. This will insert a snippet that tests whether or not the status code is 200.
-    * Take a look at the snippet we just added. This is how we will structure and write most of our Postman tests.
-    ```
+### Solution
 
-    pm.test('description of test here', function() {
-      // What we want tested here
-      pm.expect( [data being tested] ).to.eql( [value] )
-    })
-    ```
-  * Next, check if the data that came back as a response is an array.
-  * *NOTE:* You will need to parse the response to check any values: `pm.response.json()`.
+<details>
+
+<summary> <code> GET - All Users </code> </summary>
+
+```js
+const responseJSON = pm.response.json();
+
+pm.test("Status code is 200", function () {
+  pm.response.to.have.status(200);
+});
+
+pm.test("Returned data is an array", function () {
+  pm.expect( Array.isArray( responseJSON ) ).to.eql( true );
+});
+
+pm.test("Returned data has a length of 100", function () {
+  pm.expect( responseJSON.length ).to.eql( 100 ); 
+});
+```
+
+</details>
 
 
-    <details>
-    <summary><code>Solution</code></summary>
 
-    ```
-    pm.test('Response is array', function() {
-        pm.expect(Array.isArray(pm.response.json())).to.eql(true);
-    })
-    ```
-    </details>
 
-  * We know that we have exactly 100 users right now. Test to make sure 100 user objects got returned.
-  
-    <details>
-    <summary><code>Solution</code></summary>
 
-    ```
-    pm.test('100 user objects in reponse', function() {
-        pm.expect(pm.response.json().length).to.eql(100)
-    })
-    ```
-    </details>
 
 #### GET - User By ID
 
