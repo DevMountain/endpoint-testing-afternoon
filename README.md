@@ -210,7 +210,7 @@ In this step, we will create a Postman test for fetching users with a query that
 * Click on the fifth request `GET - Search W Query (ERROR)`.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status is `400`.
-* Create a test to verify the returned message is `Improper query sent in request`.
+* Create a test to verify the returned message is `"Improper query sent in request: citty=new york"`.
 
 ### Solution
 
