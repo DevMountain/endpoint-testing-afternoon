@@ -2,9 +2,9 @@
 
 # Project Summary
 
-In this project, we will learn about endpoint testing using Postman. Postman is a REST client that we will be making HTTP requests from. We will learn how to write Postman tests for the responses from the HTTP requests.
+In this project, we will practice the basics of endpoint testing in Postman. Using a provided Postman collection, we'll create tests for a server's endpoints.
 
-Postman docs: https://www.getpostman.com/docs/postman/scripts/test_scripts
+If you need to refresh on Postman's documentation: <a href="https://www.getpostman.com/docs/postman/scripts/test_scripts">Click Me!</a>
 
 ## Setup
 
