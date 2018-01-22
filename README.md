@@ -41,7 +41,7 @@ In this step, we will create a Postman test for fetching all users.
 
 ### Instructions
 
-* Click on the first request `GET - All Users`.
+* Click on the `GET - All Users` request.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status code is `200`.
 * Create a test to verify the returned data is an `Array`.
@@ -81,7 +81,7 @@ In this step, we will create a Postman test for fetching users by ID.
 
 ### Instructions
 
-* Click on the second request `GET - User by ID`.
+* Click on the `GET - User by ID` request.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status is `200`.
 * Create a test to verify the returned data is an `Array` with a length of `1`.
@@ -139,7 +139,7 @@ In this step, we will create a Postman test for fetching a user by ID that retur
 
 ### Instructions
 
-* Click on the third request `GET - User by ID ( error )`
+* Click on the `GET - User by ID ( error )` request.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status is `400`.
 * Create a test to verify the returned message is `"User id sent must be a number"`.
@@ -172,7 +172,7 @@ In this step, we will create a Postman test for fetching users with a query.
 
 ### Instructions
 
-* Click on the fourth request `GET - User with Query`.
+* Click on the `GET - User with Query` request.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status is `200`.
 * Create a test to verify the return data set has a length greater than `0`.
@@ -207,7 +207,7 @@ In this step, we will create a Postman test for fetching users with a query that
 
 ### Instructions
 
-* Click on the fifth request `GET - User with Query ( error )`.
+* Click on the `GET - User with Query ( error )` request.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status is `400`.
 * Create a test to verify the returned message is `"Improper query sent in request: citty=new york"`.
@@ -240,7 +240,7 @@ In this step, we will create a Postman test for updating a user by ID.
 
 ### Instructions
 
-* Click on the sixth request `PUT - Update user by ID`.
+* Click on the `PUT - Update user by ID` request.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned status is `200`.
 * Create a test to verify the returned data is an `Array` with a length of `1`.
@@ -289,7 +289,7 @@ In this step, we will create a Postman test for updating a user by ID that retur
 
 ### Instructions
 
-* Click on the seventh request `PUT - Update User by ID ( error )`.
+* Click on the `PUT - Update User by ID ( error )` request.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned stats is `400`.
 * Create a test to verify the returned message is `""`.
