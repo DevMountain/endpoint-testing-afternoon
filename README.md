@@ -342,11 +342,41 @@ In this step, we will create a Postman test for creating a new user.
 <summary> <code> POST - Create user </code> </summary>
 
 ```js
+const responseJSON = pm.response.json();
 
+const user = responseJSON[0];
+
+const expectedUser = {
+  id: user.id,
+  first_name: "Bruce",
+  last_name: "Wayne",
+  email: "bruce@scarybat.com",
+  city: "Gotham",
+  state: "New Jersey",
+  phone: "(856) 6044252"
+};
+
+pm.test("Status code is 200", function () {
+  pm.response.to.have.status( 200 ); 
+});
+
+pm.test("Returned data is an Array with a length of 1", function () {
+  pm.expect( Array.isArray( responseJSON ) ).to.eql( true );
+  pm.expect( responseJSON.length ).to.eql( 1 );
+});
+
+pm.test("Returned user is expected", function () {
+  pm.expect( user ).to.eql( expectedUser );
+});
+
+pm.test("Returned user id is a number", function () {
+  pm.expect( typeof( user.id ) ).to.eql('number'); 
+});
 ```
 
 </details>
 
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/9.png" />
 
 
 
