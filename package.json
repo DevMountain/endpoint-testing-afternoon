@@ -1,20 +1,9 @@
 {
   "name": "endpoint-testing-afternoon",
   "version": "1.0.0",
-  "description": "Unit Testing - Day 2 - ( technology here )",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DevMountain/endpoint-testing-afternoon.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DevMountain/endpoint-testing-afternoon/issues"
   },
   "homepage": "https://github.com/DevMountain/endpoint-testing-afternoon#readme",
   "dependencies": {

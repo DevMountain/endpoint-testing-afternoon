@@ -6,23 +6,26 @@ In this project, we will learn about endpoint testing using Postman. Postman is 
 
 Postman docs: https://www.getpostman.com/docs/postman/scripts/test_scripts
 
+## Setup
+
+* `fork` and `clone` this repository.
+* `cd` into the root of the project.
+* Run `npm install`.
+* Run `nodemon` to start up the server.
+  * The server will run on port `3535`, do not change this port.
+
 ## Step 1
-
-* Run `npm install` in the terminal to install dependencies.
-* Run `nodemon` in the terminal. The package.json file has already been configured to run the server file on the execution of the `nodemon` command. Do not change the port from 3535.
-
-## Step 2
 
 ### Summary
 
-We will import a collection of requests to Postman.
+In this step, we'll import the Postman collection into Postman.
 
 ### Instructions
 
 * Open Postman.
 * Click on the `import` button located in the top left corner of Postman.
   * The file you are importing is inside of the `postman_collection` folder in this repo.
-* After importing, you should have a collection called `Endpoint Testing Afternoon`. If you click on it, the list of requests should expand/close;
+* After importing, you should have a collection called `Endpoint Testing Afternoon`.
 
 ## Step 3
 
