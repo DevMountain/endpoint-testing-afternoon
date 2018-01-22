@@ -73,6 +73,40 @@ pm.test("Returned data has a length of 100", function () {
 
 <img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/3.png" />
 
+## Step 3
+
+### Summary
+
+In this step, we will create a Postman test for fetching users by ID.
+
+### Instructions
+
+* Click on the second request `GET - User by ID`.
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned status is `200`.
+* Create a test to verify the returned data is an `Array` with a length of `1`.
+* Create a test to verify the returned data has an object with the following properties:
+  * `id` equal to `9`.
+  * `first_name` equal to `"Tatum"`.
+  * `last_name` equal to `"Vell"`.
+  * `email` equal to `"tvell8@wisc.edu"`
+  * `city` equal to `"Youngstown"`.
+  * `state` equal to `"Ohio"`.
+  * `phone` equal to `"(330) 6802507"`
+
+### Solution
+
+<details>
+
+<summary> <code> GET - User by ID </code> </summary>
+
+```js
+
+```
+
+</details>
+
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/4.png" />
 
 
 
