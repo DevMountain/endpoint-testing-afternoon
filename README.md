@@ -164,120 +164,49 @@ pm.test("Returned error message is expected", function () {
 
 <img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/4.png" />
 
+## Step 5
+
+### Summary
+
+In this step, we will create a Postman test for fetching users with a query.
+
+### Instructions
+
+* Click on the fourth request `GET - Searc W/ Query`.
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned status is `200`.
+* Create a test to verify the return data set has a length greater than `0`.
+
+### Solution
+
+<details>
+
+<summary> <code> GET - Search W/ Query </code> </summary>
+
+```js
+const responseJSON = pm.response.json();
+
+pm.test("Status code is 200", function () {
+  pm.response.to.have.status( 200 );
+});
+
+pm.test("Return data has a length greator than 0", function () {
+  pm.expect( responseJSON.length > 0 ).to.eql( true );
+});
+```
+
+</details>
+
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/5.png" />
 
 
 
 
 
-#### GET - User By ID
 
-Time to move on to the next request: `GET - User By ID`. Select the request and go to the `Tests` tab. This request hits an enpoint that returns a specific user by the user's ID.
 
-__Write tests for the following__:
-* Status should be 200.
-* Should respond with an array of 1 user object.
-* The user with an ID of 9 is a test user that was put in our database and will never be deleted by a user.
-  * Response object should have values of:
-  ```
-      {
-          "id": 9,
-          "first_name": "Tatum",
-          "last_name": "Vell",
-          "email": "tvell8@wisc.edu",
-          "city": "Youngstown",
-          "state": "Ohio",
-          "phone": "(330) 6802507"
-      }
-  ```
 
-  <details>
-  <summary><code>Solution</code></summary>
 
-  ```
-  const res = pm.response.json();
-
-  pm.test("Status code is 200", function () {
-      pm.response.to.have.status(200);
-  });
-
-  pm.test('Length of respose should be 1', function() {
-      pm.expect(res.length).to.eql(1)
-  })
-
-  pm.test('Correct user info returned for ID 9', function() {
-      const tatum =     {
-          "id": 9,
-          "first_name": "Tatum",
-          "last_name": "Vell",
-          "email": "tvell8@wisc.edu",
-          "city": "Youngstown",
-          "state": "Ohio",
-          "phone": "(330) 6802507"
-      }
-      let correctInfo = true;
-      for (let prop in tatum) {
-          if (tatum[prop] !== res[0][prop]) correctInfo = false;
-      }
-      pm.expect(correctInfo).to.eql(true);
-  })
-  ```
-  </details>
-
-#### GET - User By ID (ERROR)
-This test is checking what gets returned when an ID is not correctly sent.
-
-__Write tests for the following:__
-* When text is sent instead of a valid ID, the status code should be 400.
-* Message sent: `User id sent must be a number`
-  * HINT: To check the text sent as the body of the response, use:
-  ```
-  pm.expect(pm.response.text()).to.include("String you expect");
-  ```
-
-  <details>
-  <summary><code>Solution</code></summary>
-
-  ```
-  pm.test("Status code is 400", function () {
-      pm.response.to.have.status(400);
-  });
-
-  pm.test('Message: User id sent must be a number', function () {
-      pm.expect(pm.response.text()).to.include("User id sent must be a number");
-  });
-  ```
-  </details>
-
-#### GET -  Search W/ Query
-
-You can search for any user objects using queries. You can search with as little as just one letter. Example:
-* `?firstName=jo`
-* `?lastName=R`
-* `?email=jacey14@`
-* `?city=new`
-* `?state=ca`
-* `?phone=801`
-
-__Test for the following:__
-* Status should be 200.
-* Since we have a test user in the database with the letter 't' (Tatum Vell) in their first name, the response length should always be greater than zero (given the search query: `?firstName=t`).
-
-  <details>
-  <summary><code>Solution</code></summary>
-
-  ```
-  pm.test("Status code is 200", function () {
-      pm.response.to.have.status(200);
-  });
-
-  pm.test('Length of response > 0; given: firstName=t', function() {
-      let greaterThanZero = true;
-      if (pm.response.json().length < 1) greaterThanZero = false;
-      pm.expect(greaterThanZero).to.eql(true);
-  })
-
-  ```
-  </details>
 
 #### GET - Search W/ Query (ERROR)
 
