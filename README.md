@@ -135,7 +135,7 @@ pm.test("Returned data is expected", function () {
 
 ### Summary
 
-In this step, we will create a Postman test for fetching a user by ID with an Error.
+In this step, we will create a Postman test for fetching a user by ID that returns an error.
 
 ### Instructions
 
@@ -199,11 +199,38 @@ pm.test("Return data has a length greator than 0", function () {
 
 <img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/5.png" />
 
+## Step 6
 
+### Summary
 
+In this step, we will create a Postman test for fetching users with a query that returns an error.
 
+### Instructions
 
+* Click on the fifth request `GET - Search W Query (ERROR)`.
+* Click on the `Send` button to see the returned data.
+* Create a test to verify the returned status is `400`.
+* Create a test to verify the returned message is `Improper query sent in request`.
 
+### Solution
+
+<details>
+
+<summary> <code> GET - Search W Query (ERROR) </code> </summary>
+
+```js
+pm.test("Status code is 400", function () {
+  pm.response.to.have.status( 400 );
+});
+
+pm.test("Returned error message is expected", function () {
+  pm.expect( pm.response.text() ).to.eql("Improper query sent in request: citty=new york");
+});
+```
+
+</details>
+
+<img src="https://github.com/DevMountain/endpoint-testing-afternoon/blob/master/readme-assets/6.png" />
 
 
 
