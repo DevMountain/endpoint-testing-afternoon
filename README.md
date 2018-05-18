@@ -56,16 +56,16 @@ In this step, we will create a Postman test for fetching all users.
 ```js
 const responseJSON = pm.response.json();
 
-pm.test("Status code is 200", function () {
+pm.test("Status code is 200", function() {
   pm.response.to.have.status(200);
 });
 
-pm.test("Returned data is an array", function () {
-  pm.expect( Array.isArray( responseJSON ) ).to.eql( true );
+pm.test("Returned data is an array", function() {
+  pm.expect(Array.isArray(responseJSON)).to.eql(true);
 });
 
-pm.test("Returned data has a length of 100", function () {
-  pm.expect( responseJSON.length ).to.eql( 100 ); 
+pm.test("Returned data has a length of 100", function() {
+  pm.expect(responseJSON.length).to.eql(100);
 });
 ```
 
@@ -113,17 +113,17 @@ const expectedObject = {
 
 const responseJSON = pm.response.json();
 
-pm.test("Status code is 200", function () {
-  pm.response.to.have.status( 200 );
+pm.test("Status code is 200", function() {
+  pm.response.to.have.status(200);
 });
 
-pm.test("Returned data is an Array with length of 1", function () {
-  pm.expect( Array.isArray( responseJSON ) ).to.eql( true );
-  pm.expect( responseJSON.length ).to.eql( 1 );
+pm.test("Returned data is an Array with length of 1", function() {
+  pm.expect(Array.isArray(responseJSON)).to.eql(true);
+  pm.expect(responseJSON.length).to.eql(1);
 });
 
-pm.test("Returned data is expected", function () {
-  pm.expect( responseJSON[0] ).to.eql( expectedObject ); 
+pm.test("Returned data is expected", function() {
+  pm.expect(responseJSON[0]).to.eql(expectedObject);
 });
 ```
 
@@ -151,12 +151,12 @@ In this step, we will create a Postman test for fetching a user by ID that retur
 <summary> <code> GET - User by ID ( error ) </code> </summary>
 
 ```js
-pm.test("Status code is 400", function () {
-  pm.response.to.have.status( 400 );
+pm.test("Status code is 400", function() {
+  pm.response.to.have.status(400);
 });
 
-pm.test("Returned error message is expected", function () {
-  pm.expect( pm.response.text() ).to.eql("User id sent must be a number");
+pm.test("Returned error message is expected", function() {
+  pm.expect(pm.response.text()).to.eql("User id sent must be a number");
 });
 ```
 
@@ -186,12 +186,12 @@ In this step, we will create a Postman test for fetching users with a query.
 ```js
 const responseJSON = pm.response.json();
 
-pm.test("Status code is 200", function () {
-  pm.response.to.have.status( 200 );
+pm.test("Status code is 200", function() {
+  pm.response.to.have.status(200);
 });
 
-pm.test("Return data has a length greator than 0", function () {
-  pm.expect( responseJSON.length > 0 ).to.eql( true );
+pm.test("Return data has a length greator than 0", function() {
+  pm.expect(responseJSON.length > 0).to.eql(true);
 });
 ```
 
@@ -219,12 +219,14 @@ In this step, we will create a Postman test for fetching users with a query that
 <summary> <code> GET - User with Query ( error ) </code> </summary>
 
 ```js
-pm.test("Status code is 400", function () {
-  pm.response.to.have.status( 400 );
+pm.test("Status code is 400", function() {
+  pm.response.to.have.status(400);
 });
 
-pm.test("Returned error message is expected", function () {
-  pm.expect( pm.response.text() ).to.eql("Improper query sent in request: citty=new york");
+pm.test("Returned error message is expected", function() {
+  pm
+    .expect(pm.response.text())
+    .to.eql("Improper query sent in request: citty=new york");
 });
 ```
 
@@ -257,23 +259,23 @@ In this step, we will create a Postman test for updating a user by ID.
 ```js
 const responseJSON = pm.response.json();
 
-pm.test("Status code is 200", function () {
-  pm.response.to.have.status( 200 );
+pm.test("Status code is 200", function() {
+  pm.response.to.have.status(200);
 });
 
-pm.test("Returned data is an Array with a length of 1", function () {
-  pm.expect( Array.isArray( responseJSON ) ).to.eql( true );
-  pm.expect( responseJSON.length ).to.eql( 1 );
+pm.test("Returned data is an Array with a length of 1", function() {
+  pm.expect(Array.isArray(responseJSON)).to.eql(true);
+  pm.expect(responseJSON.length).to.eql(1);
 });
 
 const user = responseJSON[0];
 
-pm.test("Returned email is 'garey@ilovecode.com'", function () {
-  pm.expect( user.email ).to.eql( "garey@ilovecode.com" );
+pm.test("Returned email is 'garey@ilovecode.com'", function() {
+  pm.expect(user.email).to.eql("garey@ilovecode.com");
 });
 
-pm.test("Returned city is 'Pittsburg'", function () {
-  pm.expect( user.city ).to.eql( "Pittsburg" );
+pm.test("Returned city is 'Pittsburg'", function() {
+  pm.expect(user.city).to.eql("Pittsburg");
 });
 ```
 
@@ -292,7 +294,7 @@ In this step, we will create a Postman test for updating a user by ID that retur
 * Click on the `PUT - Update User by ID ( error )` request.
 * Click on the `Send` button to see the returned data.
 * Create a test to verify the returned stats is `400`.
-* Create a test to verify the returned message is `""`.
+* Create a test to verify the returned message is `"Error with user ID in request."`.
 
 ### Solution
 
@@ -301,12 +303,12 @@ In this step, we will create a Postman test for updating a user by ID that retur
 <summary> <code> PUT - Update User by ID ( error ) </code> </summary>
 
 ```js
-pm.test("Status code is 400", function () {
-  pm.response.to.have.status( 400 );
+pm.test("Status code is 400", function() {
+  pm.response.to.have.status(400);
 });
 
-pm.test("Returned error message is expected", function () {
-  pm.expect( pm.response.text() ).to.eql("Error with user ID in request.");
+pm.test("Returned error message is expected", function() {
+  pm.expect(pm.response.text()).to.eql("Error with user ID in request.");
 });
 ```
 
@@ -356,21 +358,21 @@ const expectedUser = {
   phone: "(856) 6044252"
 };
 
-pm.test("Status code is 200", function () {
-  pm.response.to.have.status( 200 ); 
+pm.test("Status code is 200", function() {
+  pm.response.to.have.status(200);
 });
 
-pm.test("Returned data is an Array with a length of 1", function () {
-  pm.expect( Array.isArray( responseJSON ) ).to.eql( true );
-  pm.expect( responseJSON.length ).to.eql( 1 );
+pm.test("Returned data is an Array with a length of 1", function() {
+  pm.expect(Array.isArray(responseJSON)).to.eql(true);
+  pm.expect(responseJSON.length).to.eql(1);
 });
 
-pm.test("Returned user is expected", function () {
-  pm.expect( user ).to.eql( expectedUser );
+pm.test("Returned user is expected", function() {
+  pm.expect(user).to.eql(expectedUser);
 });
 
-pm.test("Returned user id is a number", function () {
-  pm.expect( typeof( user.id ) ).to.eql('number'); 
+pm.test("Returned user id is a number", function() {
+  pm.expect(typeof user.id).to.eql("number");
 });
 ```
 
@@ -388,7 +390,7 @@ In this step, we will create a Postman test for creating a user that returns an 
 
 * Click on the `POST - Create user ( error )` request.
 * Click on the `Send` button to see the returned data.
-* Create a test to verify the returned status code is `200`.
+* Create a test to verify the returned status code is `400`.
 * Create a test to verify the returned message is `"All needed user info was not sent in the body of request."`.
 
 ### Solution
@@ -398,12 +400,14 @@ In this step, we will create a Postman test for creating a user that returns an 
 <summary> <code> POST - Create user ( error ) </code> </summary>
 
 ```js
-pm.test("Status code is 400", function () {
-  pm.response.to.have.status( 400 );
+pm.test("Status code is 400", function() {
+  pm.response.to.have.status(400);
 });
 
-pm.test("Returned error message is expected", function () {
-  pm.expect( pm.response.text() ).to.eql("All needed user info was not sent in the body of request.");
+pm.test("Returned error message is expected", function() {
+  pm
+    .expect(pm.response.text())
+    .to.eql("All needed user info was not sent in the body of request.");
 });
 ```
 
@@ -433,12 +437,12 @@ In this step, we will create a Postman test for removing a user by ID.
 ```js
 const user = pm.response.json()[0];
 
-pm.test("Status code is 200", function () {
-  pm.response.to.have.status( 200 );
+pm.test("Status code is 200", function() {
+  pm.response.to.have.status(200);
 });
 
-pm.test("Returned user ID is equal to 66", function () {
-  pm.expect( user.id ).to.eql( 66 );
+pm.test("Returned user ID is equal to 66", function() {
+  pm.expect(user.id).to.eql(66);
 });
 ```
 
@@ -466,12 +470,12 @@ In this step, we will create a Postman test for removing a user that returns an 
 <summary> <code> DELETE - Remove user ( error ) </code> </summary>
 
 ```js
-pm.test("Status code is 404", function () {
-  pm.response.to.have.status( 404 );
+pm.test("Status code is 404", function() {
+  pm.response.to.have.status(404);
 });
 
-pm.test("Returned error message is expected", function () {
-  pm.expect( pm.response.text() ).to.eql("No user with an ID of 508.");
+pm.test("Returned error message is expected", function() {
+  pm.expect(pm.response.text()).to.eql("No user with an ID of 508.");
 });
 ```
 
